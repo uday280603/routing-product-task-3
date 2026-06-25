@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Products</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content *ngIf="getAllProducts.length > 0 ; else noData">
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item product-item"
+              *ngFor="let product of getAllProducts"
+              [routerLink]="['/products', product.productId]"
+            >
+              {{ product.productName }}
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<ng-template #noData>
+  <p class="alert alert-danger">NO PRODUCTS YET..</p>
+</ng-template>

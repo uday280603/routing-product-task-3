@@ -1,0 +1,90 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="productForm" (ngSubmit)="onAddProduct()">
+            <div class="form-group">
+              <label for="productName">Product Name*</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="productName"
+              />
+            </div>
+            <div class="form-group">
+              <label for="productImage">Product Image Url*</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="productImage"
+              />
+            </div>
+            <div class="form-group">
+              <label for="productDescription">Product Deacription*</label>
+              <textarea
+                type="text"
+                class="form-control"
+                formControlName="productDescription"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="isAvailable">Product Available*</label>
+              <select
+                type="text"
+                class="form-control"
+                formControlName="isAvailable"
+              >
+                <option [ngValue]="true">Yes</option>
+                <option [ngValue]="false">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="productPrice">Product Price*</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="productPrice"
+                placeholder="Enter product price"
+              />
+            </div>
+            <div class="form-group">
+              <label for="warranty">Product Warranty(Years)*</label>
+              <select
+                type="number"
+                class="form-control"
+                formControlName="warranty"
+                placeholder="Enter product warranty"
+              >
+                <option value="1 Year">1 Year</option>
+                <option value="2 Year">2 Year</option>
+                <option value="3 Year">3 Year</option>
+                <option value="4 Year">4 Year</option>
+                <option value="5 Year">5 Year</option>
+              </select>
+            </div>
+            <button
+              *ngIf="!isInEditMode"
+              mat-raised-button
+              color="primary"
+              class="w-100"
+              type="submit"
+            >
+              Add Product
+            </button>
+            <button
+              *ngIf="isInEditMode"
+              mat-raised-button
+              color="accent"
+              class="w-100"
+              type="button"
+              (click)="onUpdateProduct()"
+            >
+              Update Product
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
