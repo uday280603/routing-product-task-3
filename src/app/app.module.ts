@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
@@ -13,6 +12,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './shared/component/home/home.component';
 import { RouterOutlet } from "@angular/router";
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserDashboardComponent } from './shared/component/USER/user-dashboard/user-dashboard.component';
+import { UserComponent } from './shared/component/USER/user/user.component';
+import { UserFormComponent } from './shared/component/USER/user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductComponent,
     ProductFormComponent,
     GetConfrimComponent,
-    HomeComponent
+    HomeComponent,
+    UserDashboardComponent,
+    UserComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

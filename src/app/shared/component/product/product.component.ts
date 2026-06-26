@@ -27,13 +27,24 @@ export class ProductComponent implements OnInit {
     this.onGetProduct();
   }
 
-  onGetProduct() {
-    this.productId = +this._activatedRoute.snapshot.paramMap.get('productId')!;
-    this._productservice.fetchProductById(this.productId).subscribe({
-      next: (data) => {
-        this.productObj = data;
-      },
-    });
+  // onGetProduct() {
+  //   this.productId = +this._activatedRoute.snapshot.paramMap.get('productId')!;
+  //   this._productservice.fetchProductById(this.productId).subscribe({
+  //     next: (data) => {
+  //       this.productObj = data;
+  //     },
+  //   });
+  // }
+  onGetProduct(){
+     this._activatedRoute.paramMap.subscribe(params =>{
+      this.productId = +params.get('productId')!
+      this._productservice.fetchProductById(this.productId).subscribe({
+        next : data =>{
+          this.productObj = data
+        }
+      })
+
+    })
   }
 
   onRemoveProduct() {
