@@ -1,61 +1,56 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-5">
-      <mat-card class="shadow">
 
-        <img
-          mat-card-image
-          [src]="productObj.productImage"
-          [alt]="productObj.productName"
-          style="height: 250px; object-fit: cover"
-        />
+<div class="row">
+  <div class="col-12">
+    <div class="card shadow">
 
-        <mat-card-content class="p-3">
-          <h2>{{ productObj.productName }}</h2>
+      <img
+        [src]="productObj.productImage"
+        [alt]="productObj.productName"
+        class="card-img-top"
+        style="height:250px; object-fit:cover;"
+      >
 
-          <ul class="list-group">
-            <li class="list-group-item">
-              <strong>Product Id:</strong>
-              {{ productObj.productId }}
-            </li>
+      <div class="card-body">
+        <h2 class="card-title">{{ productObj.productName }}</h2>
 
-            <li class="list-group-item">
-              <strong>Description:</strong>
-              {{ productObj.productDescription }}
-            </li>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>Product Id:</strong> {{ productObj.productId }}
+          </li>
 
-            <li class="list-group-item">
-              <strong>Price:</strong>
-              ₹ {{ productObj.productPrice }}
-            </li>
+          <li class="list-group-item">
+            <strong>Description:</strong> {{ productObj.productDescription }}
+          </li>
 
-            <li class="list-group-item">
-              <strong>Warranty:</strong>
-              {{ productObj.warranty }}
-            </li>
+          <li class="list-group-item">
+            <strong>Price:</strong> ₹ {{ productObj.productPrice }}
+          </li>
 
-            <li class="list-group-item">
-              <strong>Available:</strong>
-              {{ productObj.isAvailable ? 'Yes' : 'No' }}
-            </li>
-          </ul>
-        </mat-card-content>
+          <li class="list-group-item">
+            <strong>Warranty:</strong> {{ productObj.warranty }}
+          </li>
 
-        <mat-card-actions class="d-flex justify-content-between p-3">
-          <button 
-          routerLink="edit"
-          mat-raised-button color="primary" class="me-2">
+          <li class="list-group-item">
+            <strong>Available:</strong>
+            {{ productObj.isAvailable ? 'Yes' : 'No' }}
+          </li>
+        </ul>
+
+        <div class="d-flex justify-content-between mt-3">
+          <button
+            routerLink="edit"
+            class="btn btn-primary">
             Edit
           </button>
 
-          <button 
-          (click)="onRemoveProduct()"
-          mat-raised-button color="warn">
+          <button
+            (click)="onRemoveProduct()"
+            class="btn btn-danger">
             Delete
           </button>
-        </mat-card-actions>
+        </div>
+      </div>
 
-      </mat-card>
     </div>
   </div>
 </div>
